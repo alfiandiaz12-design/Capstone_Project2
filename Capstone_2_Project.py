@@ -20,12 +20,15 @@ plt.show()
 df['Income'].isna().sum()
 
 #%%
+df['Income'].describe()
+
+#%%
 #Heatmap
 df_numerik = df.select_dtypes(include=['number'])
 cor_matriks = df_numerik.corr(method='spearman')
 plt.figure(figsize=(16,10))
 sns.heatmap(cor_matriks, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
-plt.title('Heatmap Korelasi Kolom Numerik', fontsize=16)
+plt.title('Heatmap Korelasi', fontsize=16)
 plt.show()
 
 # %%
@@ -71,20 +74,20 @@ plt.tight_layout
 plt.show()
 
 #%%
-#Groupby Mean Marital_Status
-df.groupby('Marital_Status')['Income'].mean().round(2).sort_values()
+#Groupby Median Marital_Status
+df.groupby('Marital_Status')['Income'].median().round(2).sort_values()
 
 #%%
-#Groupby Mean Education
-df.groupby('Education')['Income'].mean().round(2).sort_values()
+#Groupby median Education
+df.groupby('Education')['Income'].median().round(2).sort_values()
 
 #%%
-#Groupby Mean Kidhome
-df.groupby('Kidhome')['Income'].mean().round(2).sort_values()
+#Groupby median Kidhome
+df.groupby('Kidhome')['Income'].median().round(2).sort_values()
 
 #%%
-#Groupby Mean Teenhome
-df.groupby('Teenhome')['Income'].mean().round(2).sort_values()
+#Groupby median Teenhome
+df.groupby('Teenhome')['Income'].median().round(2).sort_values()
 
 #%%
 #Isi Missing Values Income
@@ -362,4 +365,23 @@ plt.show()
 
 #%%
 df.to_csv('data_bersih_capstone2.csv', index=False)
+
+#%%
+selected_cols = [
+    'Income',
+    'Kidhome', 'Teenhome',
+    'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases',  # channel pembelian
+    'NumWebVisitsMonth',  # channel visit
+    'MntWines', 'MntFruits', 'MntMeatProducts', 'MntFishProducts',
+    'MntSweetProducts', 'MntGoldProds'  # produk
+]
+
+corr_matrix = df[selected_cols].corr(method='spearman')
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', center=0,
+            vmin=-1, vmax=1, linewidths=0.5)
+plt.title("Heatmap Spearman Correlation")
+plt.tight_layout()
+plt.show()
 

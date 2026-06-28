@@ -1,5 +1,5 @@
-# 🛒 Customer Personality Analysis
-### Analisis Perilaku Konsumen Berdasarkan Segmentasi Pelanggan
+# 🛒 Demographic Analysis
+###  Pengaruh Pendapatan dan Tanggungan Keluarga terhadap Preferensi Pembelian Produk
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
@@ -9,14 +9,14 @@
 
 ## 📌 Project Overview
 
-Proyek ini merupakan **Capstone Project 2** dari program Data Analytics di **Purwadhika Digital Technology School**. Analisis dilakukan menggunakan dataset **Customer Personality Analysis** dari Kaggle untuk memahami bagaimana pendapatan dan tanggungan keluarga memengaruhi preferensi pembelian pelanggan.
+Proyek ini merupakan **Capstone Project 2** dari program Data Analytics di **Purwadhika Digital Technology School**. Analisis dilakukan menggunakan dataset **Customer Personality Analysis** dari Kaggle untuk memahami Pengaruh Pendapatan dan Tanggungan Keluarga terhadap Preferensi Pembelian Produk.
 
 ---
 
 ## 🗃️ Dataset
 
 - **Sumber:** [Kaggle — Customer Personality Analysis](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis)
-- **Ukuran awal:** 2.240 rows, 30 columns
+- **Ukuran awal:** 2.240 rows, 28 columns
 - **Ukuran setelah preprocessing:** 2.233 rows, 28 columns
 
 ---
@@ -71,9 +71,9 @@ Dibagi menjadi 3 kelompok menggunakan metode persentil (P33 & P67):
 
 | Segmen | Rata-rata Pendapatan |
 |--------|----------------------|
-| Low | ~282.283 |
-| Mid | ~515.324 |
-| High | ~769.155 |
+| Low | < 40025.7 |
+| Mid | 40025.7 - 63179.7 |
+| High |> 63179.7 |
 
 ### Child Segment
 Kombinasi Kidhome dan Teenhome menjadi 4 kelompok:
